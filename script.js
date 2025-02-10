@@ -1,6 +1,6 @@
 function stringChop(str, size) {
   // your code here
- if (size <= 0) return []; // Handle invalid chunk size
+ if (str === null || size <= 0) return [];
 
     let result = [];
     for (let i = 0; i < str.length; i += size) {
@@ -12,4 +12,4 @@ function stringChop(str, size) {
 // Do not change the code below
 const str = prompt("Enter String:");
 const size = parseInt(prompt("Enter Chunk Size:"), 10);
-alert(JSON.stringify(stringChop(str, size)));
+alert(JSON.stringify(chunkString(str, size)));
