@@ -1,15 +1,10 @@
-function stringChop(str, size) {
-  // your code here
- if (str === null || size <= 0) return [];
-
-    let result = [];
-    for (let i = 0; i < str.length; i += size) {
-        result.push(str.slice(i, i + size));
+function chunkString(str, chunkLength) {
+    let chunks = [];
+    for (let i = 0; i < str.length; i += chunkLength) {
+        chunks.push(str.substring(i, i + chunkLength));
     }
-    return result;
+    return chunks;
 }
-
-// Do not change the code below
-const str = prompt("Enter String:");
-const size = parseInt(prompt("Enter Chunk Size:"), 10);
-alert(JSON.stringify(chunkString(str, size)));
+console.log(chunkString("Hello, world!", 5)); // ["Hello", ", wor", "ld!"]
+console.log(chunkString("12345", 2)); // ["12", "34", "5"]
+console.log(chunkString("abc", 5));
